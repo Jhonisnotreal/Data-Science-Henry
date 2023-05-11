@@ -56,6 +56,7 @@ print(' ')
 print(pila.size())
 print(' ')
 
+'''
 while pila.items:
 	print(pila.items)
 	print(pila.pop())
@@ -64,6 +65,45 @@ while pila.items:
 	print(pila.size())
 	print(' ')
 	time.sleep(5)
+'''
+
+# La Cola agrega (enqueue) al principio (insert) y la
+# fila agreaga al finale (append)
+class Cola:
+
+	def __init__(self):
+		self.items = []
+		return None
+
+	def vacio(self):
+		return self.items == []
+
+	def enqueue(self, item): #Agregar el elemento eso significa enqueue
+		self.items.insert(0, item)
+		return None
+
+	def eliminar(self):
+		if self.items:
+			return self.items.pop()
+		else:
+			return None
+
+	def tamanio(self):
+		return len(self.items)
+
+cola = Cola()
+cola.enqueue(1)
+print(cola.items)
 
 
+for i in range(10, 100, 7):
+	cola.enqueue(i)
+	print(cola.items)
+	time.sleep(3)
 
+while cola.items:
+	print(cola.items)
+	print(cola.eliminar())
+	print(cola.vacio())
+	print(cola.tamanio())
+	time.sleep(3)
