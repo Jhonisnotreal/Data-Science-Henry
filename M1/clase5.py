@@ -29,4 +29,41 @@ class Pila:
 	def size(self):
 		return len(self.items)
 
+pila = Pila()
+pila.push(1)
+print(pila.items)
+pila.pop()
+print(pila.items)
+
+
+for i in range(10,100, 7):
+	pila.push(i)
+
+print(pila.items)
+print(pila.peek())
+
+print(pila.items[::-1])
+
+print(' ')
+for i  in pila.items[:3:2]:
+	print(i)
+
+print(' ')
+for i  in pila.items[::-1]:
+	print(i)
+
+print(' ')
+print(pila.size())
+print(' ')
+
+while pila.items:
+	print(pila.items)
+	print(pila.pop())
+	print(pila.empty())
+	print(pila.peek())
+	print(pila.size())
+	print(' ')
+	time.sleep(5)
+
+
 
