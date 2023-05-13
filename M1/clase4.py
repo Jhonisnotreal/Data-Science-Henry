@@ -1,6 +1,6 @@
 #Lunes 08-05-2023
 
-# Minuto 43 40
+# Minuto 1 28 27
 
 import pandas as pd
 import numpy as np
@@ -79,14 +79,44 @@ datos = {
 df = pd.DataFrame(datos)
 print(df)
 
+df2 = pd.DataFrame([['Maria', 18],['Carmen', 20],['Luis', 22]], columns = ['Nombre', 'Edad'])
+print("\n", df2)
 
+# print(df2['Nombre'])
 
+matriz = pd.DataFrame(np.random.randn(4,3), columns=['A', 'B', 'C'])
+print("\n", matriz)
 
+# colesterol = pd.read_csv('colesterol.csv', sep=';', decimal=',')
+# colesterol.head(7) #las primeras 7, por defecto es 5
+# colesterol.tail(7) #las ultimas 5
 
+print("\n", df2.info())
+print("\n", df2.shape[1])
+print("\n", df2.size)
+print("\n", df2.index)
+# df.rename(columns={'nombre':'name', 'grado':'estudios'})
+# print(df)
 
+# df.rename(index={0:1000, 1:1001, 2:1002})
+# print("\n",df)
 
+# print(df.iloc[3:])
+print(df.iloc[::2, [0,3]]) #Filas pares con solo las columnas 0 y 3
 
+print("\n", df.loc[:, ['nombre', 'correo']])
 
+print("\n", df[['nombre', 'edad']]) #en [] dobles es el dataframe, con solo 1 es una serie
+
+print("\n", df.nombre)
+
+print("\n", df.loc[3:4, ['nombre', 'edad']])
+
+print("\n", df.loc[df['edad'] > 18])
+
+df['estatura'] = pd.Series([False, False, True, True])
+
+print("\n",df)
 
 
 
