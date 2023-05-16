@@ -1,6 +1,6 @@
 #Lunes 08-05-2023
 
-# Minuto 1 28 27
+# Minuto 1 32 27
 
 import pandas as pd
 import numpy as np
@@ -117,6 +117,20 @@ print("\n", df.loc[df['edad'] > 18])
 df['estatura'] = pd.Series([False, False, True, True])
 
 print("\n",df)
+
+print(df['edad'] * 100)
+
+df_final = df[['nombre', 'edad', 'estatura']]
+
+df_final.dropna()
+
+df_final.reset_index(drop=True)
+
+df_final.to_csv('demo_final.csv', index=False)
+
+print("\n",df_final.dropna())
+
+# df_final.to_excel('demo_final.xlsx', index=False)
 
 
 
