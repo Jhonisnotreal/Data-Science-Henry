@@ -3,7 +3,7 @@
 # Variables, funciones y procedimientos en SQL
 
 
-# :=   se llama operador morsa, asigna variables al momento
+# :=  se llama operador morsa, asigna variables al momento
 
 print(a:=4)
 

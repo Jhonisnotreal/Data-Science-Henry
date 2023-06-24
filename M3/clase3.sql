@@ -1,6 +1,5 @@
 use adventureworks;
 
-
 select 
 A.productid, A.totalunidades, B.unidadesVendidas, C.name
 from

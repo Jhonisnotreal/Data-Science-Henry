@@ -13,7 +13,7 @@ begin
 end $$
 
 delimiter ;
-call totalOrdenes('2002-07-01')
+call totalOrdenes('2002-07-01');
 -- orderdate es de salesorderheader timestampp
 
 # crear una funcion que calcule el margen bruto
