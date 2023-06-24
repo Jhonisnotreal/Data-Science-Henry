@@ -3,6 +3,7 @@ use adventureworks;
 create database henry_01;
 use henry_01;
 show tables;
+
 create table gasto (
 	idGasto int,
     idSucursal int,
@@ -21,8 +22,9 @@ fields terminated by ',' enclosed by '' escaped by ''
 lines terminated by '\n' ignore 1 lines
 ;
 
-select 
-* from gasto;
+select * from gasto;
+
+show tables;
 
 create table compra (
 	idCompra int,
@@ -35,15 +37,16 @@ create table compra (
 
 show variables like 'secure_file_priv';
 
-load data local infile '\Users\PC ONE\Downloads\Gasto.csv'
+load data local infile 'C:/Users/PC ONE/OneDrive/Escritorio/DS Henry/M3/Homework/Compra.csv'
 into table compra
 fields terminated by ',' enclosed by '' escaped by ''
 lines terminated by '\n' ignore 1 lines
 ;
 
+
 set global local_infile = 1;
 
-load data infile ''
+load data local infile 'C:/Users/PC ONE/OneDrive/Escritorio/DS Henry/M3/Homework/Venta.csv'
 into table venta
 fields terminated by ',' enclosed by '' escaped by ''
 lines terminated by '\n' ignore 1 lines;
@@ -71,17 +74,18 @@ create table sucursal (
     longitud2 varchar(100)
 );
 
-load data infile ''
+load data local infile 'C:/Users/PC ONE/OneDrive/Escritorio/DS Henry/M3/Homework/Sucursales.csv'
 into table sucursal
 character set utf8mb4
 fields terminated by ';' enclosed by '' escaped by '\"'
 lines terminated by '\n' ignore 1 lines;
 
+
 create table cliente (
 	id int,
     provincia varchar(100),
     nombre_y_apellido varchar(200),
-    domicilio varchar(100),
+    domicilio varchar(200),
     telefono varchar(100),
     edad varchar(100),
     localidad varchar(100),
@@ -95,9 +99,12 @@ create table cliente (
     col10 varchar(100)
 );
 
-load data infile ''
+load data local infile 'C:/Users/PC ONE/OneDrive/Escritorio/DS Henry/M3/Homework/Clientes.csv'
 into table cliente
 character set utf8mb4
 fields terminated by ';' enclosed by '' escaped by '\"'
 lines terminated by '\n' ignore 1 lines;
+
+select count(*) from cliente;
+
 

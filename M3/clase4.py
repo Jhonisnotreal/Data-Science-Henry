@@ -12,14 +12,14 @@ connection = mysql.connector.connect(user='root', password='Aftrpython19',
 
 import pandas as pd
 
-df = pd.read_csv('M3/Homework/Gasto.csv')
+df = pd.read_csv('Homework/Clientes.csv', sep=';')
 #df = pd.read_excel('/Users/aladelca/Downloads/dataset_henry/Empleados.xls')
-#df = df.fillna(' ')
+# df = df.fillna(' ')
 
 cursor = connection.cursor()
 
 for i,row in df.iterrows():
-    sql = "INSERT INTO gasto VALUES (" + "%s,"*(len(row)-1) + "%s)"
+    sql = "INSERT INTO cliente VALUES (" + "%s,"*(len(row)-1) + "%s)"
 
     
     cursor.execute(sql, tuple(row))
