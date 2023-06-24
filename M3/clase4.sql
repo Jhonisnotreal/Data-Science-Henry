@@ -2,7 +2,7 @@ use adventureworks;
 
 create database henry_01;
 use henry_01;
-
+show tables;
 create table gasto (
 	idGasto int,
     idSucursal int,

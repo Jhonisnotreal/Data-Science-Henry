@@ -6,9 +6,27 @@
 
 import mysql.connector
 
-connection = mysql.connector.connect(user='root', password='Aftrpython19', host='127.0.0.1')
+connection = mysql.connector.connect(user='root', password='Aftrpython19',
+                              host='127.0.0.1',
+                              database='henry_01')
 
+import pandas as pd
 
-#
+df = pd.read_csv('M3/Homework/Gasto.csv')
+#df = pd.read_excel('/Users/aladelca/Downloads/dataset_henry/Empleados.xls')
+#df = df.fillna(' ')
+
+cursor = connection.cursor()
+
+for i,row in df.iterrows():
+    sql = "INSERT INTO gasto VALUES (" + "%s,"*(len(row)-1) + "%s)"
+
+    
+    cursor.execute(sql, tuple(row))
+
+connection.commit()
+
+print('Todo correcto')
+
 
 

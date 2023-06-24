@@ -1,4 +1,5 @@
 use henry_01;
+show tables;
 
 select * from cliente;
 
