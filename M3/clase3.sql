@@ -1,4 +1,10 @@
 use adventureworks;
+show tables;
+select * from salesorderdetail;
+
+select * from salesorderdetail where orderqty > (select avg(orderqty) from salesorderdetail);
+select avg(orderqty) from salesorderdetail;
+
 
 select 
 A.productid, A.totalunidades, B.unidadesVendidas, C.name

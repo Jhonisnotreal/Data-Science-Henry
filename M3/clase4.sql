@@ -107,4 +107,53 @@ lines terminated by '\n' ignore 1 lines;
 
 select count(*) from cliente;
 
+create table proveedor(
+	IDProveedor int,
+    Nombre varchar(100),
+    Domicilio varchar(100),
+    ciudad varchar(100),
+    Provincia varchar(100),
+    Pais varchar(100),
+    Departamento varchar(100)
+);
+	
+describe proveedor;
 
+create table empleados(
+	ID_empleado int,
+    Apellido varchar(100),
+    Nombre varchar(100),
+    Sucursal varchar(100),
+    Sector varchar(100),
+    Cargo varchar(100),
+    Salario varchar(100)
+);
+
+select * from empleados;
+describe empleados;
+
+create table tipoGasto(
+	idTipoGasto int,
+    Descripcion varchar(100),
+    Monto_Aproximado double
+);
+drop table tipoGasto;
+
+load data local infile 'C:/Users/PC ONE/OneDrive/Escritorio/DS Henry/M3/Homework_Resuelto/TiposDeGasto.csv'
+into table tipoGasto
+fields terminated by ';' enclosed by '' escaped by '\"'
+lines terminated by '\n' ignore 1 lines;
+
+select * from tipoGasto;
+
+create table producto(
+	idProducto int,
+    Concepto varchar(100),
+    Tipo varchar(100),
+    Precio decimal(20,2)
+);
+
+create table canalVenta(
+	idCanalVenta int,
+    Descripcion varchar(100)
+);

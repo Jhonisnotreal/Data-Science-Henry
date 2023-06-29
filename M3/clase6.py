@@ -7,7 +7,8 @@
 
 # diagrama de caja para detectar outliers, regla de las tres sigmas
 
-# min 58
+# Esta todavia no se da, posiblemente el lunes. 
+# Update: efectivamente el lunes se dio
 
 
 
